@@ -1,0 +1,26 @@
+.product-colection {    
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 15rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto {
+    width: 300px;
+    height: 250px;
+    box-shadow: 10px 10px 24px 5px rgba(0,0,0,0.21);
+    cursor: pointer;
+    padding: 2rem;
+    transition: ease-in-out .3s;
+    /* display: flex; */
+}
+
+.producto:hover {
+    opacity: 0.6;
+}
+
+.cactus-tienda-img {
+}

@@ -17,8 +17,13 @@ Route::get('/', function () {
     // return view('welcome');
     return view('inicio');
 });
-
+// 
 Route::get('/productos','CactusAmpProductosController@vistaProductos');
+Route::get('/productos/amps','CactusAmpProductosController@vistaProductos');
+Route::get('/productos/pedales','CactusAmpProductosController@vistaProductos');
+Route::get('/productos/otros','CactusAmpProductosController@vistaProductos');
+Route::post('/detalle_producto','CactusAmpProductosController@detalleProducto');
+// 
 Route::get('/nosotros','CactusAmpController@vistaNosotros');
 Route::get('/artistas','CactusAmpController@vistaArtistas');
 Route::get('/contacto','CactusAmpController@vistaContacto');

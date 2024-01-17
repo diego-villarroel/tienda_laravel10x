@@ -12,9 +12,9 @@
                 <a class="nav-link dropdown-toggle link-success" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Productos</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item link-success" href="/productos">Todos</a></li>
-                    <li><a class="dropdown-item link-success" href="/productos?filtro=amps">Amps</a></li>
-                    <li><a class="dropdown-item link-success" href="/productos?filtro=pedales">Pedales</a></li>
-                    <li><a class="dropdown-item link-success" href="/productos?filtro=otros">Otros</a></li>
+                    <li><a class="dropdown-item link-success" href="/productos/amps">Amps</a></li>
+                    <li><a class="dropdown-item link-success" href="/productos/pedales">Pedales</a></li>
+                    <li><a class="dropdown-item link-success" href="/productos/otros">Otros</a></li>
                 </ul>
             </li>
             <li class="nav-item">

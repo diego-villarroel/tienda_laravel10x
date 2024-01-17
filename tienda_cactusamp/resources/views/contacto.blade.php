@@ -1,6 +1,6 @@
 @include('/generico/header')
     <main>
-        <section class="min-h-screen px-4">
+        <section class="contacto">
             CONTACTACION
         </section>
     </main>
