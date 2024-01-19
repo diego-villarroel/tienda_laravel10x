@@ -3,7 +3,7 @@
     <section class="product-colection layout-generico pt-3">
         @foreach ($coleccion as $prod)
             <div class="producto" data-id="{{$prod->id}}" data-bs-toggle="modal" data-bs-target="#detalle_producto">
-                <img class="cactus-tienda-img col-10" src="@if (!is_null($prod->url_img)) {{ $prod->url_img }} @else /img/cactus_amp2.jpg @endif" alt="">
+                <img class="cactus-tienda-img" src="@if (!is_null($prod->url_img)) {{ $prod->url_img }} @else /img/cactus_amp2.jpg @endif" alt="">
                 <h5 class="text-center">{{$prod->nombre_producto}}</h5>
             </div>
         @endforeach
@@ -13,29 +13,27 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="row">
-                    <div class="col-11">
-                        <h5 class="modal-title" id="titulo_producto"></h5>
+                    <div class="col-11 ps-5 mt-3">
+                        <h4 class="modal-title" id="titulo_producto"></h4>
                     </div>
                     <div class="col-1">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 </div>
-                <!-- <div class="modal-header"> -->
-                <!-- </div>
-                <div class="modal-body"> -->
-                    <div class="row">
-                        <div class="col-4">
-
-                        </div>
-                        <div class="col-8">
-                            <div id="descrip_prod"></div>
-                        </div>
+                <div class="row">
+                    <div class="col-4 text-center">
+                        IMG
                     </div>
-                <!-- </div>
-                <div class="modal-footer"> -->
-                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" id="agregar_carrito" class="btn btn-sm btn-success" data-id-prod="">+ Carrito</button>
-                <!-- </div> -->
+                    <div class="col-8">
+                        <div id="descrip_prod"></div>
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" id="agregar_carrito" class="btn btn-sm btn-success" data-id-prod="">+ Carrito</button>                        
+                    </div>
+                </div>
             </div>
         </div>
     </div>
