@@ -27,27 +27,11 @@
                 <a class="nav-link link-success" href="/contacto">Contactanos</a>
             </li>
             <li class="nav-item">
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#login_register"><i class="bi bi-person-square"></i></button>
+                <a class="btn btn-outline-success cactus_carrito" href="/login">
+                    <i class="bi bi-cart"></i>
+                    <span class="badge rounded-pill bg-warning text-dark">2</span>
+                </a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li> -->
         </ul>
-
-        <!-- <div class="nav_container">
-            <div class="sub-menu">
-                <span>Productos</span>
-                <div class="dropdown-seccion">
-                    <li><a href="">Todos</a></li>
-                    <li><a href="">Amps</a></li>
-                    <li><a href="">Pedales</a></li>
-                    <li><a href="">Otros</a></li>
-                </div>
-            </div>
-
-            <a href="/artistas">Artistas</a>
-            <a href="/nosotros">Nosotros</a>
-            <a href="/contacto">Contactanos</a>
-        </div> -->
     </nav>
 </header>

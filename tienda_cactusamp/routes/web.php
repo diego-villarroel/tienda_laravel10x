@@ -27,4 +27,6 @@ Route::post('/detalle_producto','CactusAmpProductosController@detalleProducto');
 Route::get('/nosotros','CactusAmpController@vistaNosotros');
 Route::get('/artistas','CactusAmpController@vistaArtistas');
 Route::get('/contacto','CactusAmpController@vistaContacto');
+// 
 Route::get('/login','UsuariosController@vistaLogin');
+Route::post('/ingresar','UsuariosController@login');
