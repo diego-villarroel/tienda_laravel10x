@@ -27,7 +27,7 @@
                 <a class="nav-link link-success" href="/contacto">Contactanos</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-outline-success cactus_carrito" href="/login">
+                <a class="btn btn-outline-success cactus_carrito" href="/checkout">
                     <i class="bi bi-cart"></i>
                     <span class="badge rounded-pill bg-warning text-dark">2</span>
                 </a>

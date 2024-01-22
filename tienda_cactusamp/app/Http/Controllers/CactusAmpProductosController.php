@@ -26,4 +26,8 @@ class CactusAmpProductosController extends Controller
 
         return json_encode($detalle);
     }
+
+    public static function vistaCheckout(){
+        return view('/tienda/checkout_wsp');
+    }
 }

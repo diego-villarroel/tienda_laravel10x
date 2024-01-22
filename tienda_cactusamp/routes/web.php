@@ -23,6 +23,7 @@ Route::get('/productos/amps','CactusAmpProductosController@vistaProductos');
 Route::get('/productos/pedales','CactusAmpProductosController@vistaProductos');
 Route::get('/productos/otros','CactusAmpProductosController@vistaProductos');
 Route::post('/detalle_producto','CactusAmpProductosController@detalleProducto');
+Route::get('/checkout','CactusAmpProductosController@vistaCheckout');
 // 
 Route::get('/nosotros','CactusAmpController@vistaNosotros');
 Route::get('/artistas','CactusAmpController@vistaArtistas');
