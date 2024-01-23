@@ -13,14 +13,14 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="row">
-                    <div class="col-11 ps-5 mt-3">
+                    <div class="col-10 col-lg-11 ps-5 mt-3">
                         <h4 class="modal-title" id="titulo_producto"></h4>
                     </div>
-                    <div class="col-1">
+                    <div class="col-2 col-lg-1 mt-3">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row cuerpo_de">
                     <div class="col-4 text-center">
                         IMG
                     </div>
@@ -54,6 +54,17 @@
             postJSON(data)[0];
         })
     }
+    let btn_agregar = document.getElementById('agregar_carrito');
+    btn_agregar.addEventListener('click',function(){
+        let carrito = [];
+        if (localStorage.getItem("carrito") != null) {
+            carrito = JSON.parse(localStorage.getItem("carrito"));
+        }
+        let prod_add = [btn_agregar.getAttribute('data-id-prod'),btn_agregar.getAttribute('data-nombre-prod')];
+        carrito.push(prod_add);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        document.getElementById('cantidad_carrito').innerHTML = carrito.length;
+    });
 
     async function postJSON(data) {
         try {
@@ -68,13 +79,11 @@
             const result = await response.json();
             document.getElementById('titulo_producto').innerHTML = result[0].nombre_producto;
             document.getElementById('descrip_prod').innerHTML = result[0].descripcion;
-            document.getElementById('agregar_carrito').setAttribute('data-id-prod',result[0].id)
+            document.getElementById('agregar_carrito').setAttribute('data-id-prod',result[0].id);
+            document.getElementById('agregar_carrito').setAttribute('data-nombre-prod',result[0].nombre_producto);
         } catch (error) {
             console.error("Error:", error);
         }
     }
-    // prod.addEventListener('click', function(){
-    //     console.log('aca');
-    // })
 </script>
 @include('/generico/footer')

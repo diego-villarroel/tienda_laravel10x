@@ -28,3 +28,7 @@
     max-height: 90%;
     object-fit: cover;
 }
+
+.contenido_detalle_prod{
+    min-height: 60vh;
+}

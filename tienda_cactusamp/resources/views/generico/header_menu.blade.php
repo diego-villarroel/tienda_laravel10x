@@ -1,5 +1,5 @@
 <header class="header-pegado">
-    <nav class="nav justify-content-between py-3">
+    <nav class="nav justify-content-between py-3 pe-3">
         <a href="/">
             <img src="/img/cactus_amp.jpg" class="nav_icon" alt="" width="50px" height="50px">
         </a>
@@ -29,7 +29,7 @@
             <li class="nav-item">
                 <a class="btn btn-outline-success cactus_carrito" href="/checkout">
                     <i class="bi bi-cart"></i>
-                    <span class="badge rounded-pill bg-warning text-dark">2</span>
+                    <span class="badge rounded-pill bg-warning text-dark" id="cantidad_carrito"></span>
                 </a>
             </li>
         </ul>
