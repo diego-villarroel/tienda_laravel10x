@@ -7,3 +7,9 @@
 
     grid-auto-flow: column;
 }
+
+.dropdown-item.active, 
+.dropdown-item:active {
+    color: #fff !important;
+    background-color: #198754;
+}

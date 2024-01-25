@@ -1,4 +1,4 @@
-async function postJSON(data) {
+async function detalleProducto(data) {
     try {
         const response = await fetch("/detalle_producto", {
             method: "POST", // or 'PUT'
@@ -27,7 +27,7 @@ function eventosTienda(){
             id_prod = this.getAttribute('data-id');
             // 
             const data = { _token: document.getElementById('token').value, id_producto: id_prod };
-            postJSON(data)[0];
+            detalleProducto(data)[0];
         })
     }
     let btn_agregar = document.getElementById('agregar_carrito');
@@ -40,6 +40,7 @@ function eventosTienda(){
         carrito.push(prod_add);
         localStorage.setItem("carrito", JSON.stringify(carrito));
         document.getElementById('cantidad_carrito').innerHTML = carrito.length;
+        document.getElementById('cerrar_modal').click();
     });
 
     

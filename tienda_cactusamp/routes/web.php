@@ -24,10 +24,9 @@ Route::get('/productos/pedales','CactusAmpProductosController@vistaProductos');
 Route::get('/productos/otros','CactusAmpProductosController@vistaProductos');
 Route::post('/detalle_producto','CactusAmpProductosController@detalleProducto');
 Route::get('/checkout','CactusAmpProductosController@vistaCheckout');
+Route::post('/registro_compra','CactusAmpProductosController@registroCompra');
 // 
 Route::get('/nosotros','CactusAmpController@vistaNosotros');
 Route::get('/artistas','CactusAmpController@vistaArtistas');
 Route::get('/contacto','CactusAmpController@vistaContacto');
-// 
-// Route::get('/login','UsuariosController@vistaLogin');
-// Route::post('/ingresar','UsuariosController@login');
+//

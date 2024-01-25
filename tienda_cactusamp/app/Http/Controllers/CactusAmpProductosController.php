@@ -31,9 +31,18 @@ class CactusAmpProductosController extends Controller
         return view('/tienda/checkout_wsp');
     }
 
-    public static function confirmCompra(){
-        $nombre = Request::input('nombre_comprador');
-        $pedido = Request::input('pedido');
-        return view('/tienda/checkout_wsp');
+    public static function registroCompra(){
+        $nombre = Request::input('_nombre');
+        $apellido = Request::input('_apellido');
+        $email = Request::input('_email');
+        $telefono = Request::input('_telefono');
+
+        $compra = Request::input('carrito');
+
+        if ( !is_null($compra) && !empty($compra) ) {
+            $compra = json_decode($compra);
+            return 1;
+        }
+        return 0;
     }
 }

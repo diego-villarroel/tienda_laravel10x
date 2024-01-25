@@ -1,4 +1,5 @@
 @include('/generico/header')
+    <input type="hidden" id="token" value="{{csrf_token()}}">
     <div class="row justify-content-center my-5">
         <div class="col-8">
             <h3>DETALLE DEL CARRITO</h3>
@@ -85,64 +86,6 @@
 
     <script>
         
-        for ( let i = 0; i < carrito_checkout.length; i++ ) {
-            document.getElementById('detalle_compra').innerHTML += "<tr><td>"+carrito_checkout[i][1]+"</td><td class='text-center'><button class='btn btn-sm btn-outline-secondary' id='eliminar_prod_"+i+"' data-bs-toggle='modal' data-bs-target='#confirm_eliminar_producto' data-prod='"+i+"'><i class='bi bi-trash3' ></i></button></td></tr>";
-        }
         
-        let mensaje = "Hola Cactus Amp! Esta es mi lista de productos que quiero comprar: ";
-        let wsp_url = "https://"+host_wsp+"/541133756124?text=";
-
-        document.getElementById('finalizar_compra').addEventListener('click',function(){
-            let nombre = document.getElementById('nombre').value;
-            let apellido = document.getElementById('apellido').value;
-            let email = document.getElementById('email').value;
-            let telefono = document.getElementById('telefono').value;
-            // VALIDACION DE CAMPOS
-            let validacion = 0;
-            if ( nombre == '' ) {
-                document.getElementById('nombre').className += ' is-invalid';
-                validacion++;
-            } else {
-                document.getElementById('nombre').className = 'form-control';
-                validacion--;
-            }
-            if ( apellido == '' ) {
-                document.getElementById('apellido').className += ' is-invalid';
-                validacion++;
-            } else {
-
-                document.getElementById('apellido').className = 'form-control';
-                validacion--;
-            }
-            if ( email == '' ) {
-                document.getElementById('email').className += ' is-invalid';
-                validacion++;
-            } else {
-
-                document.getElementById('email').className = 'form-control';
-                validacion--;
-            }
-            if ( telefono == '' ) {
-                document.getElementById('telefono').className += ' is-invalid';
-                validacion++;
-            } else {
-
-                document.getElementById('telefono').className = 'form-control';
-                validacion--;
-            }
-            // VALIDACIÓN DE QUE CARRITO TENGA PRODUCTOS
-            if (carrito_checkout.length < 0) {
-                validacion++;
-            }
-            // 
-            if (validacion < 0) {
-                for ( let i = 0; i < carrito_checkout.length; i++ ) {
-                    mensaje += "\n - "+carrito_checkout[i][1]+"";
-                }
-                mensaje += "\nMi nombre es "+nombre+" "+apellido+", mi teléfono es "+telefono+" y mi email es "+email+".\nSaludos!";
-                document.getElementById('link_wsp').setAttribute('href',wsp_url+encodeURIComponent(mensaje));
-                document.getElementById('link_wsp').click();
-            }
-        })
     </script>
 @include('/generico/footer')

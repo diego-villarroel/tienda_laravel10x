@@ -24,13 +24,13 @@
                     <div class="col-4 text-center">
                         IMG
                     </div>
-                    <div class="col-8">
+                    <div class="col-7 mt-3 mx-3">
                         <div id="descrip_prod"></div>
                     </div>
                 </div>
                 <div class="row my-5">
                     <div class="col text-center">
-                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="cerrar_modal">Cerrar</button>
                         <button type="button" id="agregar_carrito" class="btn btn-sm btn-success" data-id-prod="">+ Carrito</button>                        
                     </div>
                 </div>
@@ -43,7 +43,4 @@
         <input type="hidden" name="id_prod">
     </form>
 </main>
-<script>
-    // eventosTienda();
-</script>
 @include('/generico/footer')
