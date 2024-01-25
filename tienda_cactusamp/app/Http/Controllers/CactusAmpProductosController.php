@@ -30,4 +30,10 @@ class CactusAmpProductosController extends Controller
     public static function vistaCheckout(){
         return view('/tienda/checkout_wsp');
     }
+
+    public static function confirmCompra(){
+        $nombre = Request::input('nombre_comprador');
+        $pedido = Request::input('pedido');
+        return view('/tienda/checkout_wsp');
+    }
 }
