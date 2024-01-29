@@ -16,7 +16,7 @@ function host_wsp(){
 }
 
 function inicioCheckout(carrito_checkout) {
-    if (carrito_checkout.length > 0) {
+    if (carrito_checkout != null && carrito_checkout.length > 0) {
         document.getElementById('hay_compras').className = 'table mt-4';
         document.getElementById('finalizar_compra').className = 'btn btn-success';
         document.getElementById('carrito_vacio').className += ' d-none';
@@ -34,30 +34,34 @@ function inicioCheckout(carrito_checkout) {
         document.getElementById('telefono').setAttribute('disabled',true);
     }
     // DETALLE DE PRODUCTO
-    for ( let i = 0; i < carrito_checkout.length; i++ ) {
-        document.getElementById('detalle_compra').innerHTML += "<tr><td>"+carrito_checkout[i][1]+"</td><td class='text-center'><button class='btn btn-sm btn-outline-secondary' id='eliminar_prod_"+i+"' data-bs-toggle='modal' data-bs-target='#confirm_eliminar_producto' data-prod='"+i+"'><i class='bi bi-trash3' ></i></button></td></tr>";
+    if (carrito_checkout != null){
+        for ( let i = 0; i < carrito_checkout.length; i++ ) {
+            document.getElementById('detalle_compra').innerHTML += "<tr><td>"+carrito_checkout[i][1]+"</td><td class='text-center'><button class='btn btn-sm btn-outline-secondary' id='eliminar_prod_"+i+"' data-bs-toggle='modal' data-bs-target='#confirm_eliminar_producto' data-prod='"+i+"'><i class='bi bi-trash3' ></i></button></td></tr>";
+        }
     }
 }
 
 function eliminarProducto(carrito_checkout) {
-    for ( let i = 0; i < carrito_checkout.length; i++ ) {
-        document.getElementById('eliminar_prod_'+i).addEventListener('click',function(){
-            let prod_a_eliminar = parseInt(this.getAttribute('data-prod'));
-            document.getElementById('prod_a_eliminar').innerHTML = carrito_checkout[prod_a_eliminar][1];
-            // 
-            document.getElementById('confirm_eliminar_prod').addEventListener('click',function(){
-                carrito_checkout.splice(prod_a_eliminar,1)
-                localStorage.clear();
-                localStorage.setItem('carrito',JSON.stringify(carrito_checkout));
-                window.location.replace('/checkout');
-            });
-        })
+    if (carrito_checkout != null) {
+        for ( let i = 0; i < carrito_checkout.length; i++ ) {
+            document.getElementById('eliminar_prod_'+i).addEventListener('click',function(){
+                let prod_a_eliminar = parseInt(this.getAttribute('data-prod'));
+                document.getElementById('prod_a_eliminar').innerHTML = carrito_checkout[prod_a_eliminar][1];
+                // 
+                document.getElementById('confirm_eliminar_prod').addEventListener('click',function(){
+                    carrito_checkout.splice(prod_a_eliminar,1)
+                    localStorage.clear();
+                    localStorage.setItem('carrito',JSON.stringify(carrito_checkout));
+                    window.location.replace('/checkout');
+                });
+            })
+        }
     }
 }
 
 function finalizarCompra(carrito_checkout,host) {
     let mensaje = "Hola Cactus Amp! Esta es mi lista de productos que quiero comprar: ";
-    let wsp_url = "https://"+host+"/541133756124?text=";
+    let wsp_url = "https://"+host+"/541131187394?text=";
 
     document.getElementById('finalizar_compra').addEventListener('click',function(){
         let nombre = document.getElementById('nombre').value;
@@ -72,20 +76,23 @@ function finalizarCompra(carrito_checkout,host) {
         validacion = validacionEmail(email,'email',validacion);
         validacion = validacionTelefonoARG(telefono,'telefono',validacion);
         // VALIDACIÓN DE QUE EL CARRITO TENGA PRODUCTOS
-        if (carrito_checkout.length < 0) {
-            validacion++;
-        }
-        // 
-        if (validacion == 0) {
-            for ( let i = 0; i < carrito_checkout.length; i++ ) {
-                mensaje += "\n - "+carrito_checkout[i][1]+"";
-            }
 
-            const data = { _token: document.getElementById('token').value, carrito: JSON.stringify(carrito_checkout), _nombre: nombre, _apellido: apellido, _email: email, _telefono: telefono };
-            registroCompra(data)[0];
-            mensaje += "\nMi nombre es "+nombre+" "+apellido+", mi teléfono es "+telefono+" y mi email es "+email+".\nSaludos!";
-            document.getElementById('link_wsp').setAttribute('href',wsp_url+encodeURIComponent(mensaje));
-            document.getElementById('link_wsp').click();
+        if (carrito_checkout != null){
+            if (carrito_checkout.length < 0) {
+                validacion++;
+            }
+            // 
+            if (validacion == 0) {
+                for ( let i = 0; i < carrito_checkout.length; i++ ) {
+                    mensaje += "\n - "+carrito_checkout[i][1]+"";
+                }
+
+                const data = { _token: document.getElementById('token').value, carrito: JSON.stringify(carrito_checkout), _nombre: nombre, _apellido: apellido, _email: email, _telefono: telefono };
+                registroCompra(data)[0];
+                mensaje += "\nMi nombre es "+nombre+" "+apellido+", mi teléfono es "+telefono+" y mi email es "+email+".\nSaludos!";
+                document.getElementById('link_wsp').setAttribute('href',wsp_url+encodeURIComponent(mensaje));
+                document.getElementById('link_wsp').click();
+            }
         }
     })
 

@@ -1,3 +1,7 @@
+/* ================================= */
+/* ========= RESET ESTILOS ========= */
+/* ================================= */
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -16,7 +20,17 @@ a {
     color: inherit;
 }
 
+/* ===================================== */
+/* ========= ESTILOS GENÉRICOS ========= */
+/* ===================================== */
+
+.primer_vista {
+    min-height: 90vh !important;
+}
+
+/* ========================== */
 /* ========= FOOTER ========= */
+/* ========================== */
 
 .cactus-footer {
     background: #198754;
@@ -50,23 +64,22 @@ a {
     transition: ease-in-out .2s;
 }
 
-/* ARTISTAS */
+/* ======================== */
+/* ========= MENÚ ========= */
+/* ======================== */
 
-.layout-responsive {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, minmax(15rem, 1fr));
+.header-pegado {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
     justify-items: center;
-    align-items: center;
-    justify-content: center;
+
+    grid-auto-flow: column;
 }
 
-.card img {
-    opacity: 1;
-    transition: opacity ease-in-out .3s;
-}
-
-.card img:hover {
-    opacity: .5;
-    transition: opacity ease-in-out .3s;
+.dropdown-item.active, 
+.dropdown-item:active {
+    color: #fff !important;
+    background-color: #198754;
 }

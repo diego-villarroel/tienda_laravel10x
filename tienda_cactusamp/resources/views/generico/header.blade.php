@@ -12,16 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <!-- CSS CUSTOM -->
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/menu.css">
     @if ($_SERVER['REQUEST_URI'] == '/')
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="/css/inicio.css">
     @elseif (str_starts_with($_SERVER['REQUEST_URI'],'/productos'))
     <link rel="stylesheet" href="/css/tienda.css">
-    @elseif ($_SERVER['REQUEST_URI'] == '/nosotros' || $_SERVER['REQUEST_URI'] == '/contacto')
-    <link rel="stylesheet" href="css/nos_contact.css">
+    @elseif ($_SERVER['REQUEST_URI'] == '/artistas')
+    <link rel="stylesheet" href="/css/artistas.css">
     @endif
-    <link rel="shortcut icon" href="img/cactus_amp.jpg">
+    <link rel="shortcut icon" href="/img/logo/cactus_logo_blanco_completo.png">
     <title>Cactus Amps</title>
 </head>
 <body class="container-fluid">
-    @include('/generico/header_menu')
+    @include('/generico/menu')

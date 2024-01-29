@@ -1,6 +1,6 @@
 @include('/generico/header')
     <main>
-        <section class="contacto">
+        <section class="primer_vista">
             CONTACTACION
         </section>
     </main>

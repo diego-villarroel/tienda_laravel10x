@@ -1,6 +1,6 @@
 @include('/generico/header')
     <main>
-        <section class="px-4">
+        <section class="primer_vista px-4">
             <br><h4><i>Artistas que eligieron nuestros productos</i></h4>
             <div class="layout-responsive my-4">
                 @for ($i = 0; $i<$artistas; $i++)

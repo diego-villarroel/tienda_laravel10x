@@ -9,8 +9,11 @@ async function detalleProducto(data) {
         });
 
         const result = await response.json();
+        console.log(result);
         document.getElementById('titulo_producto').innerHTML = result[0].nombre_producto;
         document.getElementById('descrip_prod').innerHTML = result[0].descripcion;
+        document.getElementById('descrip_prod').innerHTML += "<br><br><small>Desde $"+result[0].precio+"</small>";
+        document.getElementById('img_prod').setAttribute('src',result[0].url_img);
         document.getElementById('agregar_carrito').setAttribute('data-id-prod',result[0].id);
         document.getElementById('agregar_carrito').setAttribute('data-nombre-prod',result[0].nombre_producto);
     } catch (error) {
