@@ -35,12 +35,15 @@
     <script>
         eventosTienda();
     </script>
-    @endif
-
-    @if ( $_SERVER['REQUEST_URI'] == '/checkout' ) 
+    @elseif ( $_SERVER['REQUEST_URI'] == '/checkout' ) 
     <script src="/js/checkout.js?v={{rand()}}"></script>
     <script>
         eventosCheckout();
+    </script>
+    @elseif ( $_SERVER['REQUEST_URI'] == '/' ) 
+    <script src="/js/inicio.js?v={{rand()}}"></script>
+    <script>
+        eventosinicio();
     </script>
     @endif
 </html>

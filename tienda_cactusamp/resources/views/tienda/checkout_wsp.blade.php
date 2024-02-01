@@ -21,13 +21,13 @@
             <div class="col-8">
                 <h3>TUS DATOS</h3>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
                             <label for="nombre">Tu nombre</label>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="apellido" placeholder="Tu apellido">
                             <label for="apellido">Tu apellido</label>
@@ -35,13 +35,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="email" placeholder="Email">
                             <label for="email">Email</label>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="telefono" placeholder="Teléfono">
                             <label for="telefono">Teléfono</label>

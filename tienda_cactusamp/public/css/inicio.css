@@ -9,3 +9,7 @@
 .img-card-inicio {
     min-height: 85vh;
 }
+
+.img-card-inicio-mobile {
+    min-height: 65vh !important;
+}
