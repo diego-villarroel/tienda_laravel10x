@@ -34,15 +34,6 @@ a {
 
 .cactus-footer {
     background: #198754;
-    display: grid;
-    position: block;
-    bottom: 0px;
-}
-
-.marca {
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    width: 100%;
 }
 
 .links-cactus {
