@@ -74,3 +74,96 @@ a {
     color: #fff !important;
     background-color: #198754;
 }
+
+/* ============================ */
+/* ======== RESPONSIVE ======== */
+/* ============================ */
+
+  
+#checkbox-hamburguer {
+    position: absolute;
+    display: none;
+    height: 32px;
+    width: 32px;
+    top: 20px;
+    right: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.hamburger-lines {
+    display: none;
+    height: 26px;
+    width: 32px;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #0e2431;
+}
+  
+.hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+}
+  
+.hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+}
+  
+.hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+}
+  
+input[id="checkbox-hamburguer"]:checked ~ .nav-pills {
+    transform: translateX(0);
+}
+  
+input[id="checkbox-hamburguer"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+}
+  
+input[id="checkbox-hamburguer"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+}
+  
+input[id="checkbox-hamburguer"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+
+    .hamburger-lines {
+        display: flex;
+    }
+
+    #checkbox-hamburguer {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100% !important;
+        text-align: left;
+    }
+    
+    .nav-pills{
+        position: absolute;
+        margin-top: 7vh;
+        padding-top: 9vh;
+        height: 92vh !important;
+        transform: translate(-150%);
+        transition: transform 0.5s ease-in-out;
+        display: flex;
+        background-color: #fff;
+    }
+}
